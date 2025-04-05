@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search Pokémon</title></head>
+<body>
+  <div style="display: flex;">
+    <div style="width: 200px; border-right: 1px solid black;">
+      <h3>Dashboard</h3>
+      <a href="/profile">Profile</a><br>
+      <a href="/search">Search</a><br>
+      <a href="/signout">Sign Out</a>
+    </div>
+    <div style="margin-left: 20px;">
+      <h2>Search Pokémon</h2>
+      <form method="POST" action="/search">
+        <input name="pokemon" placeholder="Enter Pokémon name" required>
+        <button type="submit">Search</button>
+      </form>
+
+      <% if (result) { %>
+        <h3>Result:</h3>
+        <p>Name: <%= result.name %></p>
+        <p>Height: <%= result.height %></p>
+        <p>Weight: <%= result.weight %></p>
+        <p>Abilities: <%= result.abilities.join(', ') %></p>
+        <p>Types: <%= result.types.join(', ') %></p>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>
